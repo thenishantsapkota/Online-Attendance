@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Login - Attendy {% endblock %}
+{% block head %}
+<link rel="stylesheet" href={{url_for("static", filename="css/login.css")}}>
+{% endblock %}
+{% block content %}
+<div class="center">
+    <h1>Login</h1>
+    <form method="POST">
+        <div class="text_field">
+            <input type="text" name="email" id="email" required>
+            <span></span>
+            <label>Email</label>
+        </div>
+        <div class="text_field">
+            <input type="password" name="password" id="password" required>
+            <span></span>
+            <label>Password</label>
+        </div>
+        <div class="forgot_password">Forgot password?</div>
+        <input type="submit" name="submit">
+        <div class="signup_link">
+            Not registered? <a href={{url_for("auth.signup")}}>Signup</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
