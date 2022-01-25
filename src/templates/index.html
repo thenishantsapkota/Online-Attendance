@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} Home - Attendy {% endblock %}
+{% block head %}
+<link rel="stylesheet" href={{url_for("static", filename="css/index.css")}}>
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class ="welcome">
+<h1 id="welcome" >Hello, {{user.full_name}}</h1>
+<p class="subtitle">Welcome to Attendy!</p>
+</div>
+{% else %}
+<div class="welcome">
+<h1 id="welcome" >Hello, Guest User</h1>
+<p class="subtitle">Welcome to Attendy!</p>
+<p class="subtitle">Please <a href={{url_for("auth.login")}}>login</a> to continue!</p>
+</div>
+{% endif %}
+<div class =""
+{% endblock %}
