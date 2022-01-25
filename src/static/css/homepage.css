@@ -1,12 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
-} 
-nav{
-margin-top: 12px;
+  font-family: "Nunito", sans-serif;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo a:active {
+  color: black;
+}
+nav {
+  margin-top: 12px;
   display: flex;
   height: 80px;
   width: 100%;
@@ -15,29 +24,29 @@ margin-top: 12px;
   padding: 0 50px 0 100px;
   flex-wrap: wrap;
 }
-nav .logo{
+nav .logo {
   color: rgb(0, 0, 0);
   font-size: 35px;
   font-weight: 600;
   letter-spacing: 1.5px;
-  font-weight:900;
+  font-weight: 900;
 }
-nav ul{
-    text-align: center;
-    justify-content: center;
+nav ul {
+  text-align: center;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   margin: auto;
 }
-nav ul li{
+nav ul li {
   margin: 0 5px;
   text-align: center;
   justify-content: center;
 }
-nav ul li a{
-    text-align: center;
-    justify-content: center;
+nav ul li a {
+  text-align: center;
+  justify-content: center;
   color: #000000;
   text-decoration: none;
   font-size: 20px;
@@ -49,28 +58,51 @@ nav ul li a{
   font-weight: bolder;
 }
 nav .main ul li a.active,
-nav .main ul li a:hover{
+nav .main ul li a:hover {
   color: #111;
   color: #2f55d4 !important;
 }
-nav .menu-btn i{
+nav .menu-btn i {
   color: rgb(184, 184, 184);
   font-size: 22px;
   cursor: pointer;
   display: none;
 }
-input[type="checkbox"]{
+input[type="checkbox"] {
   display: none;
 }
 
-nav #log-sig{
-   float: right;
+nav #log-sig {
+  float: right;
 }
 
-.login-signup  ul li a{
+.login-signup ul li a {
   background-color: #2f55d4 !important;
   color: aliceblue;
   padding: 12px 20px;
+  outline: none;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 3px 5px 0 rgb(47 85 212 / 30%);
+}
+
+@media (max-width: 1074px) {
+  nav .menu-btn i {
+    display: block;
+  }
+
+  .login-signup {
+    margin-right: -22px;
+  }
+
+  .login-signup ul li a {
+    background-color: #2f55d4 !important;
+    color: aliceblue;
+    padding: 9px 12px;
     outline: none;
     text-decoration: none;
     letter-spacing: 0.5px;
@@ -79,42 +111,15 @@ nav #log-sig{
     font-weight: 600;
     border-radius: 6px;
     box-shadow: 0 3px 5px 0 rgb(47 85 212 / 30%);
-}
-
-@media (max-width: 1074px) {
-  nav .menu-btn i{
-    display: block;
+    font-size: 15px;
   }
 
-
-  .login-signup{
-      margin-right: -22px;
-
+  nav .logo {
+    margin-left: -70px;
+    font-size: 21px;
   }
 
-  .login-signup  ul li a{
-    background-color: #2f55d4 !important;
-    color: aliceblue;
-    padding: 9px 12px;
-      outline: none;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-      font-weight: 600;
-      border-radius: 6px;
-      box-shadow: 0 3px 5px 0 rgb(47 85 212 / 30%);
-      font-size: 15px ;
-  }
-  
-
-
-nav .logo{
-  margin-left: -70px;
-  font-size: 21px;
-}
-
-  nav .main ul{
+  nav .main ul {
     position: fixed;
     top: 80px;
     left: -100%;
@@ -127,25 +132,24 @@ nav .logo{
     margin-top: 31px;
     margin-bottom: 2em;
   }
-  #click:checked ~ ul{
+  #click:checked ~ ul {
     left: 0;
   }
-  nav .main ul li{
+  nav .main ul li {
     width: 100%;
     margin: 40px 0;
   }
-  nav .main ul li a{
+  nav .main ul li a {
     width: 100%;
     margin-left: -100%;
     font-size: 20px;
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  #click:checked ~ ul li a{
+  #click:checked ~ ul li a {
     margin-left: 0px;
   }
-  nav .main ul li a:hover{
+  nav .main ul li a:hover {
     background: none;
     color: cyan;
   }
 }
-

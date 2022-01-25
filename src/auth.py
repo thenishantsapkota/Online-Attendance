@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 import email
+=======
+from distutils.log import error
+from nis import cat
+>>>>>>> Stashed changes
 from flask import (
     Blueprint,
     Response,
@@ -33,8 +38,10 @@ def login_post():
             login_user(user, remember=True)
             return redirect(url_for("views.homepage"))
         else:
-            flash("Please check your email and password!", category="error")
-            return redirect(url_for("auth.login"))
+            flash("Incorrect Email or Password, Try Again!", category="error")
+    else:
+        flash("Email doesn't exist!", category="error")
+    return render_template("login.html", user=current_user)
         
 
 @auth.get("/signup")
