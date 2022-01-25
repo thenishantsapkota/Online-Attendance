@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-import email
-=======
-from distutils.log import error
-from nis import cat
->>>>>>> Stashed changes
 from flask import (
     Blueprint,
     Response,
@@ -42,7 +36,7 @@ def login_post():
     else:
         flash("Email doesn't exist!", category="error")
     return render_template("login.html", user=current_user)
-        
+
 
 @auth.get("/signup")
 def signup() -> str:
@@ -78,12 +72,8 @@ def signup_post():
     return render_template("signup.html", user=current_user)
 
 
-
-
 @auth.get("/logout")
 def logout() -> Response:
     logout_user()
     flash("Logged out!", category="success")
     return redirect(url_for("views.homepage"))
-
-    
