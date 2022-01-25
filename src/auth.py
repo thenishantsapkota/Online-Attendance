@@ -32,7 +32,9 @@ def login_post():
             flash("Logged in successfully!", category="success")
             login_user(user, remember=True)
             return redirect(url_for("views.homepage"))
-  
+        else:
+            flash("Please check your email and password!", category="error")
+            return redirect(url_for("auth.login"))
         
 
 @auth.get("/signup")
