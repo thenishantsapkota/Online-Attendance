@@ -1,3 +1,4 @@
+import email
 from flask import (
     Blueprint,
     Response,
@@ -22,8 +23,17 @@ def login() -> str:
 
 @auth.post("/login")
 def login_post():
-    ...
+    email = request.form.get("email")
+    password = request.form.get("password")
 
+    user = User.query.filter_by(email=email).first()
+    if user:
+        if check_password_hash(user.password, password):
+            flash("Logged in successfully!", category="success")
+            login_user(user, remember=True)
+            return redirect(url_for("views.homepage"))
+  
+        
 
 @auth.get("/signup")
 def signup() -> str:
@@ -59,8 +69,12 @@ def signup_post():
     return render_template("signup.html", user=current_user)
 
 
+
+
 @auth.get("/logout")
 def logout() -> Response:
     logout_user()
     flash("Logged out!", category="success")
     return redirect(url_for("views.homepage"))
+
+    
