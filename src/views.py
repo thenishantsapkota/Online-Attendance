@@ -13,3 +13,9 @@ def homepage():
 @login_required
 def profile():
     return render_template("profile.html", user=current_user)
+
+
+@views.get("/classes")
+@login_required
+def classes():
+    return render_template("classes.html", user=current_user)
